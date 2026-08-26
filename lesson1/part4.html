@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Math Room</title>
+</head>
+<body>
+  <div class="scroll-progress"></div>
+    <header class="header">
+    <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+      <a href="../about.html" class="nav-link">About me</a>
+      <a href="../index.html" class="nav-link">Main</a>
+    </nav>
+        <button id="theme-toggle"></button>
+  </header>
+  <h1>Negative numbers</h1>
+  <div class="lesson-content">
+    <h2>Introducing Negative Numbers</h2>
+
+<p>So far, we have only worked with numbers starting from zero and moving upwards. Now, we introduce numbers <strong>below zero</strong>, which are called <strong>negative numbers</strong>.</p>
+
+<p>The easiest way to visualize negative numbers is by using a <strong>number line</strong>:</p>
+
+<div style="font-family: monospace; font-size: 18px; text-align: center; margin: 20px 0; background-color: #f4f4f4; padding: 10px; border-radius: 5px;">
+  &larr; negative &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; positive &rarr;<br>
+  <strong>-3 &nbsp; -2 &nbsp; -1 &nbsp;&nbsp; 0 &nbsp;&nbsp; 1 &nbsp;&nbsp; 2 &nbsp;&nbsp; 3</strong>
+</div>
+
+<p>Every number has a specific direction relative to zero:</p>
+<ul>
+    <li><strong>Numbers to the left of 0 are negative</strong> <em>(always written with a minus sign)</em>.</li>
+    <li><strong>Numbers to the right of 0 are positive</strong> <em>(greater than zero)</em>.</li>
+</ul>
+
+<p><strong>Examples:</strong></p>
+<ul>
+    <li><code>-5</code> &rarr; <em>negative five</em></li>
+    <li><code>-2</code> &rarr; <em>negative two</em></li>
+    <li><code>+7</code> &rarr; <em>positive seven</em></li>
+</ul>
+
+<p>By convention, we usually don't write the <code>+</code> sign for positive numbers. If a number has no sign in front of it, it is automatically assumed to be positive:</p>
+
+<p style="text-align: center; font-size: 18px;"><strong>+7 = 7</strong></p>
+
+<h3>Real-World Examples of Negative Numbers</h3>
+<p>Negative numbers are not just abstract math—we use them every day to express values that drop below a starting baseline of zero:</p>
+<ul>
+    <li><strong>Temperature:</strong> <code>-5°C</code> means five degrees below freezing (zero).</li>
+    <li><strong>Bank Accounts:</strong> A balance of <code>-$50</code> means an account is overdrawn and you owe money.</li>
+    <li><strong>Elevation:</strong> <code>-10 meters</code> describes depth below sea level.</li>
+</ul>
+
+<div class="tip-box">
+  💡 <strong>Pro Tip:</strong> Zero (<code>0</code>) is neutral! <br>
+  It is neither positive nor negative; it serves as the dividing line between the two on a number line.
+</div>
+</div>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+</body>
+
+<div class="lesson-navigation">
+  <a id="prev-btn" class="nav-btn">← Previous Part</a>
+  <a id="next-btn" class="nav-btn">Next Part →</a>
+</div>
+
+<script>
+
+const courseMap = [
+
+  "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
+  "lesson1/part4.html", "lesson1/part5.html", "lesson1/part6.html",
+
+  "lesson2/part1.html", "lesson2/part2.html", "lesson2/part3.html", 
+  "lesson2/part4.html", "lesson2/part5.html", "lesson2/part6.html", 
+  "lesson2/part7.html", "lesson2/part8.html",
+
+  "lesson3/part1.html", "lesson3/part2.html", "lesson3/part3.html", 
+  "lesson3/part4.html", "lesson3/part5.html", "lesson3/part6.html", 
+  "lesson3/part7.html", "lesson3/part8.html", "lesson3/part9.html",
+
+  "lesson4/part1.html", "lesson4/part2.html", "lesson4/part3.html", 
+  "lesson4/part4.html", "lesson4/part5.html", "lesson4/part6.html",
+
+  "lesson5/part1.html", "lesson5/part2.html", "lesson5/part3.html", 
+  "lesson5/part4.html", "lesson5/part5.html", "lesson5/part6.html"
+];
+
+
+const currentPath = window.location.pathname;
+const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+if (currentIndex !== -1) {
+
+  if (currentIndex > 0) {
+    prevBtn.href = "../" + courseMap[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.removeAttribute('href');
+  }
+
+
+  if (currentIndex < courseMap.length - 1) {
+    nextBtn.href = "../" + courseMap[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.removeAttribute('href');
+  }
+}
+</script>
+</html>

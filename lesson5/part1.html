@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Math Room</title>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+  <header class="header">
+    <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+      <a href="../about.html" class="nav-link">About me</a>
+      <a href="../index.html" class="nav-link">Main</a>
+    </nav>
+        <button id="theme-toggle"></button>
+  </header>
+
+<h1>What is an Expression?</h1>
+<div class="lesson-content">
+
+<section id="part-1">
+  <p>In English, we combine words to form a phrase like <em>"a fast red car."</em> It gives you an idea, but it is not a complete sentence because it lacks an action verb.</p>
+  <p>In mathematics, an <strong>expression</strong> is the exact same thing: a mathematical phrase. It combines numbers, letters, and operations, but it does <strong>not</strong> have an equals sign (<code>=</code>).</p>
+
+  <h3>1. The 3 Main Ingredients</h3>
+  <ul>
+    <li>
+      <strong>Variables (The Secret Boxes):</strong> A letter (such as <em>x</em>, <em>y</em>, <em>a</em>, or <em>n</em>) that represents an unknown number or a value that can change. Think of it as a gift box—you don't know what's inside until you open it.
+    </li>
+    <li>
+      <strong>Constants (The Anchors):</strong> A fixed number that never changes (like <code>5</code>, <code>-12</code>, or <code>&frac12;</code>). A 5 is always worth 5.
+    </li>
+    <li>
+      <strong>Operations (The Action Signs):</strong> Symbols like addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>&times;</code>), and division (<code>&divide;</code>) that tell you what to do with the numbers and variables.</li>
+  </ul>
+
+  <h3>2. Expression vs. Equation (The Golden Difference)</h3>
+  <p>Students often mix these two up. Here is the easiest way to remember:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Algebraic Expression</th>
+        <th>Algebraic Equation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Definition</strong></td>
+        <td>A math phrase (no result yet)</td>
+        <td>A complete math sentence (two equal sides)</td>
+      </tr>
+      <tr>
+        <td><strong>Equals Sign?</strong></td>
+        <td><strong>NO</strong> equals sign (<code>=</code>)</td>
+        <td><strong>YES</strong>, always has an equals sign (<code>=</code>)</td>
+      </tr>
+      <tr>
+        <td><strong>Example</strong></td>
+        <td><code>3x + 4</code></td>
+        <td><code>3x + 4 = 19</code></td>
+      </tr>
+      <tr>
+        <td><strong>Goal</strong></td>
+        <td>Simplify or Evaluate</td>
+        <td>Solve for the variable</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3. How Multiplication is Hidden in Algebra</h3>
+  <p>In basic math, you wrote multiplication like this: <code>3 &times; x</code>. But in algebra, the symbol <code>&times;</code> looks too much like the letter <em>x</em>! To prevent confusion, mathematicians write multiplication in 3 cleaner ways:</p>
+  <ol>
+    <li><strong>Direct Attachment:</strong> <code>3x</code> (means 3 times <em>x</em>)</li>
+    <li><strong>Parentheses:</strong> <code>3(x)</code> or <code>(3)(x)</code></li>
+    <li><strong>Dot Symbol:</strong> <code>3 &middot; x</code></li>
+  </ol>
+
+  <blockquote>
+    <p><strong>Teacher's Tip:</strong> Whenever you see a number right next to a letter without any symbol between them (like <code>7y</code> or <code>10ab</code>), it <strong>always</strong> means multiplication!</p>
+  </blockquote>
+</section>
+</div>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+</body>
+
+<div class="lesson-navigation">
+  <a id="prev-btn" class="nav-btn">← Previous Part</a>
+  <a id="next-btn" class="nav-btn">Next Part →</a>
+</div>
+
+<script>
+
+const courseMap = [
+
+  "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
+  "lesson1/part4.html", "lesson1/part5.html", "lesson1/part6.html",
+
+  "lesson2/part1.html", "lesson2/part2.html", "lesson2/part3.html", 
+  "lesson2/part4.html", "lesson2/part5.html", "lesson2/part6.html", 
+  "lesson2/part7.html", "lesson2/part8.html",
+
+  "lesson3/part1.html", "lesson3/part2.html", "lesson3/part3.html", 
+  "lesson3/part4.html", "lesson3/part5.html", "lesson3/part6.html", 
+  "lesson3/part7.html", "lesson3/part8.html", "lesson3/part9.html",
+
+  "lesson4/part1.html", "lesson4/part2.html", "lesson4/part3.html", 
+  "lesson4/part4.html", "lesson4/part5.html", "lesson4/part6.html",
+
+  "lesson5/part1.html", "lesson5/part2.html", "lesson5/part3.html", 
+  "lesson5/part4.html", "lesson5/part5.html", "lesson5/part6.html"
+];
+
+
+const currentPath = window.location.pathname;
+const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+if (currentIndex !== -1) {
+
+  if (currentIndex > 0) {
+    prevBtn.href = "../" + courseMap[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.removeAttribute('href');
+  }
+
+
+  if (currentIndex < courseMap.length - 1) {
+    nextBtn.href = "../" + courseMap[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.removeAttribute('href');
+  }
+}
+</script>
+</html>

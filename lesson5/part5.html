@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Math Room</title>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+  <header class="header">
+    <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+      <a href="../about.html" class="nav-link">About me</a>
+      <a href="../index.html" class="nav-link">Main</a>
+    </nav>
+        <button id="theme-toggle"></button>
+  </header>
+
+<h1>Evaluating Expressions</h1>
+<div class="lesson-content">
+<section id="part-5">
+  <p><strong>"Evaluating"</strong> an expression simply means calculating its final numerical value after substituting real numbers in place of the secret letters.</p>
+
+  <h3>1. The 3-Step Master Protocol</h3>
+  <ol>
+    <li><strong>Plug in with Parentheses:</strong> Replace every variable with its assigned number inside parentheses <code>()</code>. This keeps negative signs and operations safe!</li>
+    <li><strong>Follow PEMDAS strictly:</strong>
+      <ul>
+        <li><strong>P</strong>arentheses first</li>
+        <li><strong>E</strong>xponents next</li>
+        <li><strong>M</strong>ultiplication and <strong>D</strong>ivision (left to right)</li>
+        <li><strong>A</strong>ddition and <strong>S</strong>ubtraction (left to right)</li>
+      </ul>
+    </li>
+    <li><strong>Simplify:</strong> Calculate one line at a time until you reach one single final number.</li>
+  </ol>
+
+  <h3>2. Step-by-Step Walkthrough (Basic)</h3>
+  <p><strong>Problem:</strong> Evaluate <code>5x - 4</code> when <code>x = 3</code>.</p>
+  <ul>
+    <li><strong>Step 1 (Substitute):</strong> Replace <em>x</em> with <code>(3)</code> &rarr; <code>5(3) - 4</code></li>
+    <li><strong>Step 2 (Multiply):</strong> <code>5 &times; 3 = 15</code> &rarr; <code>15 - 4</code></li>
+    <li><strong>Step 3 (Subtract):</strong> <code>15 - 4 = 11</code></li>
+    <li><strong>Final Answer:</strong> <strong><code>11</code></strong></li>
+  </ul>
+
+  <h3>3. Step-by-Step Walkthrough (Advanced with Exponents & Negatives)</h3>
+  <p><strong>Problem:</strong> Evaluate <code>3x&sup2; - 2x + 5</code> when <code>x = -2</code>.</p>
+  <ul>
+    <li>
+      <strong>Step 1 (Substitute carefully using parentheses):</strong>
+      <br><code>3(-2)&sup2; - 2(-2) + 5</code>
+    </li>
+    <li>
+      <strong>Step 2 (Exponents first):</strong>
+      <br>Calculate <code>(-2)&sup2; = (-2) &times; (-2) = +4</code>
+      <br>Expression becomes: <code>3(4) - 2(-2) + 5</code>
+    </li>
+    <li>
+      <strong>Step 3 (Multiplication left to right):</strong>
+      <br>First part: <code>3(4) = 12</code>
+      <br>Second part: <code>-2(-2) = +4</code> (Negative times negative equals positive!)
+      <br>Expression becomes: <code>12 + 4 + 5</code>
+    </li>
+    <li>
+      <strong>Step 4 (Add left to right):</strong>
+      <br><code>12 + 4 = 16</code>
+      <br><code>16 + 5 = 21</code>
+    </li>
+    <li><strong>Final Answer:</strong> <strong><code>21</code></strong></li>
+  </ul>
+
+  <blockquote>
+    <p><strong>Pro Tip on Negative Numbers:</strong> Always write parentheses around negative numbers when substituting! <code>(-3)&sup2;</code> equals <code>+9</code>, but writing <code>-3&sup2;</code> without parentheses can lead to the wrong answer (<code>-9</code>).</p>
+  </blockquote>
+</section>
+</div>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+</body>
+
+<div class="lesson-navigation">
+  <a id="prev-btn" class="nav-btn">← Previous Part</a>
+  <a id="next-btn" class="nav-btn">Next Part →</a>
+</div>
+
+<script>
+
+const courseMap = [
+
+  "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
+  "lesson1/part4.html", "lesson1/part5.html", "lesson1/part6.html",
+
+  "lesson2/part1.html", "lesson2/part2.html", "lesson2/part3.html", 
+  "lesson2/part4.html", "lesson2/part5.html", "lesson2/part6.html", 
+  "lesson2/part7.html", "lesson2/part8.html",
+
+  "lesson3/part1.html", "lesson3/part2.html", "lesson3/part3.html", 
+  "lesson3/part4.html", "lesson3/part5.html", "lesson3/part6.html", 
+  "lesson3/part7.html", "lesson3/part8.html", "lesson3/part9.html",
+
+  "lesson4/part1.html", "lesson4/part2.html", "lesson4/part3.html", 
+  "lesson4/part4.html", "lesson4/part5.html", "lesson4/part6.html",
+
+  "lesson5/part1.html", "lesson5/part2.html", "lesson5/part3.html", 
+  "lesson5/part4.html", "lesson5/part5.html", "lesson5/part6.html"
+];
+
+
+const currentPath = window.location.pathname;
+const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+if (currentIndex !== -1) {
+
+  if (currentIndex > 0) {
+    prevBtn.href = "../" + courseMap[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.removeAttribute('href');
+  }
+
+
+  if (currentIndex < courseMap.length - 1) {
+    nextBtn.href = "../" + courseMap[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.removeAttribute('href');
+  }
+}
+</script>
+</html>

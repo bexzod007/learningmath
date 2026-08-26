@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Math Room</title>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+  <header class="header">
+    <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+      <a href="../about.html" class="nav-link">About me</a>
+      <a href="../index.html" class="nav-link">Main</a>
+    </nav>
+        <button id="theme-toggle"></button>
+  </header>
+
+<h1>Writing Expressions</h1>
+<div class="lesson-content">
+
+<section id="part-4">
+  <p>Algebraic writing is simply converting word problems from real life into mathematical expressions. Think of yourself as a language translator!</p>
+
+  <h3>1. Key Word Translation Dictionary</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Operation</th>
+        <th>Trigger Words</th>
+        <th>English Phrase</th>
+        <th>Math Expression</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Addition (+)</strong></td>
+        <td>Sum, Plus, Increased by, More than, Total, Added to</td>
+        <td>"A number increased by 7"</td>
+        <td><code>n + 7</code></td>
+      </tr>
+      <tr>
+        <td><strong>Subtraction (-)</strong></td>
+        <td>Difference, Minus, Decreased by, Less than, Subtracted from</td>
+        <td>"10 decreased by a number"</td>
+        <td><code>10 - n</code></td>
+      </tr>
+      <tr>
+        <td><strong>Multiplication (&times;)</strong></td>
+        <td>Product, Times, Multiply by, Twice (2&times;), Triple (3&times;), Of</td>
+        <td>"Twice a number"</td>
+        <td><code>2n</code></td>
+      </tr>
+      <tr>
+        <td><strong>Division (&divide;)</strong></td>
+        <td>Quotient, Divided by, Ratio of, Split into, Half of (&divide;2)</td>
+        <td>"The quotient of a number and 4"</td>
+        <td><code>n / 4</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>2. The Dangerous "Turnaround Words"</h3>
+  <p>In addition and multiplication, order doesn't matter (<code>3 + 5</code> is the same as <code>5 + 3</code>). But in subtraction, <strong>order is critical</strong>!</p>
+  <p>Pay close attention to phrases with <strong>"THAN"</strong> and <strong>"FROM"</strong>. They force you to swap the order of terms!</p>
+
+  <ul>
+    <li>
+      <strong>"5 less than x"</strong> $\rightarrow$ Start with <em>x</em>, then subtract 5.
+      <br>Correct: <strong><code>x - 5</code></strong> (WRONG: <code>5 - x</code>)
+    </li>
+    <li>
+      <strong>"Subtract 8 from y"</strong> $\rightarrow$ Start with <em>y</em>, then subtract 8.
+      <br>Correct: <strong><code>y - 8</code></strong> (WRONG: <code>8 - y</code>)
+    </li>
+  </ul>
+
+  <h3>3. Two-Step Translation Examples</h3>
+  <ol>
+    <li>
+      <em>"3 times a number, plus 5"</em>
+      <br>&rarr; Step 1 (Multiplication): <code>3n</code>
+      <br>&rarr; Step 2 (Addition): <strong><code>3n + 5</code></strong>
+    </li>
+    <li>
+      <em>"4 less than double a number"</em>
+      <br>&rarr; Step 1 (Double a number): <code>2x</code>
+      <br>&rarr; Step 2 (4 less than that): <strong><code>2x - 4</code></strong>
+    </li>
+    <li>
+      <em>"The sum of a number and 6, multiplied by 2"</em>
+      <br>&rarr; Notice we must sum first! Use parentheses!
+      <br>&rarr; Answer: <strong><code>2(n + 6)</code></strong>
+    </li>
+  </ol>
+</section>
+</div>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+</body>
+
+<div class="lesson-navigation">
+  <a id="prev-btn" class="nav-btn">← Previous Part</a>
+  <a id="next-btn" class="nav-btn">Next Part →</a>
+</div>
+
+<script>
+
+const courseMap = [
+
+  "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
+  "lesson1/part4.html", "lesson1/part5.html", "lesson1/part6.html",
+
+  "lesson2/part1.html", "lesson2/part2.html", "lesson2/part3.html", 
+  "lesson2/part4.html", "lesson2/part5.html", "lesson2/part6.html", 
+  "lesson2/part7.html", "lesson2/part8.html",
+
+  "lesson3/part1.html", "lesson3/part2.html", "lesson3/part3.html", 
+  "lesson3/part4.html", "lesson3/part5.html", "lesson3/part6.html", 
+  "lesson3/part7.html", "lesson3/part8.html", "lesson3/part9.html",
+
+  "lesson4/part1.html", "lesson4/part2.html", "lesson4/part3.html", 
+  "lesson4/part4.html", "lesson4/part5.html", "lesson4/part6.html",
+
+  "lesson5/part1.html", "lesson5/part2.html", "lesson5/part3.html", 
+  "lesson5/part4.html", "lesson5/part5.html", "lesson5/part6.html"
+];
+
+
+const currentPath = window.location.pathname;
+const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+if (currentIndex !== -1) {
+
+  if (currentIndex > 0) {
+    prevBtn.href = "../" + courseMap[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.removeAttribute('href');
+  }
+
+
+  if (currentIndex < courseMap.length - 1) {
+    nextBtn.href = "../" + courseMap[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.removeAttribute('href');
+  }
+}
+</script>
+</html>

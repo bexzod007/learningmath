@@ -1,0 +1,378 @@
+.scroll-progress{
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 2000;
+  height: 0.25rem;
+  transform-origin: left;
+  background: #0056d2;
+  animation: page-progress linear;
+  animation-timeline: scroll(nearest);
+}
+
+@keyframes page-progress {
+  from{ scale: 0 1; }
+  to{ scale: 1 1; }
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #F8FAFC;
+  color: #292524;
+  overflow-x: hidden;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #61666A;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.5s ease 0s;
+}
+
+.nav-link:hover{
+  color: #0056d2;
+  font-size: 30px;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+  
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+.logo:hover{
+  transform: rotate(360deg);
+}
+
+.header {
+    display: flex;                
+    justify-content: space-between; 
+    align-items: center;          
+    padding: 10px 20px;
+    border-bottom: 2px solid #61666A;   
+    position: sticky;
+    top: 0px;       
+    z-index: 1000;            
+    background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #61666A;
+  margin-right: 45px;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.details {
+  margin: 30px auto;
+  max-width: 500px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  interpolate-size: allow-keywords;
+}
+
+.details:hover {
+  border-color: #0056d2;
+  box-shadow: 0 6px 16px rgba(0, 86, 210, 0.1);
+}
+
+
+details::details-content {
+  height: 0;
+  overflow: clip;
+  transition: height 300ms ease,
+              content-visibility 300ms allow-discrete;
+}
+
+details[open]::details-content {
+  height: auto;
+}
+summary {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "✦";
+  font-size: 20px;
+  color: #0056d2;
+  transition: transform 0.2s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.topics {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  flex-direction: column; 
+  gap: 4px; 
+}
+
+.topics a {
+  display: block;
+  margin: 8px 0;
+  padding: 8px 12px;
+  color: #475569;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.topics a:hover {
+  background-color: #F0F9FF;
+  color: #0284C7;
+  border-left: 3px solid #0284C7;
+  cursor: pointer;
+}
+
+.white{
+    font-family: monospace; 
+    font-size: 18px; 
+    text-align: center; 
+    margin: 20px 0; 
+    padding: 15px; 
+    border-radius: 5px;
+    background-color: #eff6ff;
+    border: 1px solid #60a5fa;
+}
+
+h1{
+  margin-left: 17%; 
+}
+
+.lesson-content{
+  margin-left: 17%;
+  margin-bottom: 7%;
+  max-width: 47%;
+}
+
+button {
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background-color: var(--accent-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
+
+.lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .lesson-navigation {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn {
+  padding: 10px 22px;
+  background-color: #2563eb; /* Более глубокий и современный синий (Royal Blue) */
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); /* Легкая мягкая тень */
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+/* Эффект при наведении на белом фоне */
+.nav-btn:hover:not(.disabled) {
+  background-color: #1d4ed8;
+  transform: translateY(-2px); /* Плавный подъём вверх */
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35); /* Увеличенная тень при наведении */
+}
+
+/* Отдельный стиль для центральной кнопки Main Menu на белом фоне */
+.home-btn {
+  background-color: #f1f5f9; /* Светло-серый/фирменный фоновый оттенок */
+  color: #1e293b; /* Тёмный текст для отличной читаемости */
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.home-btn:hover:not(.disabled) {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* ---------dark theme----------- */
+
+body.dark-theme {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+body.dark-theme .nav-link  {
+    text-decoration: none;
+    color: #38bdf8;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.5s ease 0s;
+}
+
+body.dark-theme .nav-link:hover{
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+}
+
+body.dark-theme .details {
+  margin: 30px auto;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  interpolate-size: allow-keywords;
+}
+
+body.dark-theme .details:hover {
+  border-color: #0056d2;
+  box-shadow: 0 6px 16px rgba(0, 86, 210, 0.1);
+}
+body.dark-theme summary{
+  color: #ffffff;
+}
+
+body.dark-theme .topics a {
+  display: block;
+  margin: 8px 0;
+  padding: 8px 12px;
+  color: #A0ECFF;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+body.dark-theme .topics a:hover {
+  background-color: rgba(160, 236, 255, 0.15);
+  border-left: 3px solid #38BDF8;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  color: #ffff;
+  cursor: pointer;
+}
+
+body.dark-theme .white{
+    background-color: rgba(255, 255, 255, 0.05);
+    font-family: monospace; 
+    font-size: 18px; 
+    text-align: center; 
+    margin: 20px 0; 
+    padding: 15px; 
+    border-radius: 5px;
+    border: 1px solid #3b82f6;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.25);
+}
+
+body.dark-theme .header {
+    display: flex;                
+    justify-content: space-between; 
+    align-items: center;          
+    padding: 10px 20px;
+    border-bottom: 2px solid #61666A;   
+    position: sticky;
+    top: 0px;       
+    z-index: 1000;            
+    background-color: #0f172a;
+}
+
+body.dark-theme button {
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+body.dark-theme button:hover {
+  background-color: var(--accent-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
+
+body.dark-theme .lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme.lesson-navigation {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .nav-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+
+body.dark-theme .nav-btn:hover:not(.disabled) {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.5);
+}
+
+body.dark-theme.nav-btn.disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}

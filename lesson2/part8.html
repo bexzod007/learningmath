@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Math Room</title>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+  <header class="header">
+   <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+    <a href="../about.html" class="nav-link">About me</a>
+    <a href="../index.html" class="nav-link">Main</a>
+    </nav>
+        <button id="theme-toggle"></button>
+  </header>
+  <h1>🧠 Practice</h1>
+  <div class="lesson-content">
+
+
+
+<p>
+    Don't look for the answers yet. Try these yourself.
+</p>
+
+<h3>Easy 🟢</h3>
+
+<ol>
+    <li>What is the numerator in <strong>3/8</strong>?</li>
+    <li>What is the denominator in <strong>5/9</strong>?</li>
+    <li>Is <strong>2/7</strong> a proper or improper fraction?</li>
+    <li>Is <strong>8/3</strong> a proper or improper fraction?</li>
+</ol>
+
+<h3>Medium 🟡</h3>
+
+<ol start="5">
+    <li>Is <strong>7/10</strong> a proper or improper fraction?</li>
+    <li>Is <strong>12/12</strong> a proper or improper fraction?</li>
+    <li>Which is greater: <strong>3/8</strong> or <strong>6/8</strong>?</li>
+    <li>Which is smaller: <strong>7/10</strong> or <strong>4/10</strong>?</li>
+</ol>
+
+<h3>Challenge 🔴</h3>
+
+<ol start="9">
+    <li>
+        Explain why <strong>5/5</strong> is an improper fraction.
+    </li>
+
+    <li>
+        Explain the difference between a proper fraction
+        and an improper fraction.
+    </li>
+</ol>
+<div class="answers-wrapper">
+    <button type="button" class="answers-toggle" onclick="toggleAnswers(this)">
+        <span class="arrow">▶</span> 🔍 Click here to reveal the Answers
+    </button>
+
+    <div class="answers-content">
+        <div class="answers-inner">
+
+            <h4>Easy 🟢</h4>
+
+            <ul>
+                <li>
+                    What is the numerator in <code>3/8</code>?
+                    <br>
+                    <strong>Answer: 3</strong>
+                </li>
+
+                <li>
+                    What is the denominator in <code>5/9</code>?
+                    <br>
+                    <strong>Answer: 9</strong>
+                </li>
+
+                <li>
+                    Is <code>2/7</code> a proper or improper fraction?
+                    <br>
+                    <strong>Answer: Proper fraction</strong>
+                </li>
+
+                <li>
+                    Is <code>8/3</code> a proper or improper fraction?
+                    <br>
+                    <strong>Answer: Improper fraction</strong>
+                </li>
+            </ul>
+
+
+            <h4>Medium 🟡</h4>
+
+            <ul>
+                <li>
+                    Is <code>7/10</code> a proper or improper fraction?
+                    <br>
+                    <strong>Answer: Proper fraction</strong>
+                </li>
+
+                <li>
+                    Is <code>12/12</code> a proper or improper fraction?
+                    <br>
+                    <strong>Answer: Improper fraction</strong>
+                </li>
+
+                <li>
+                    Which is greater: <code>3/8</code> or <code>6/8</code>?
+                    <br>
+                    <strong>Answer: 6/8</strong>
+                </li>
+
+                <li>
+                    Which is smaller: <code>7/10</code> or <code>4/10</code>?
+                    <br>
+                    <strong>Answer: 4/10</strong>
+                </li>
+            </ul>
+
+
+            <h4>Challenge 🔴</h4>
+
+            <ul>
+                <li>
+                    Explain why <code>5/5</code> is an improper fraction.
+                    <br>
+                    <strong>Answer:</strong>
+                    The numerator is equal to the denominator:
+                    <code>5 = 5</code>.
+                    Therefore, <code>5/5</code> is an improper fraction.
+                    <code>5/5 = 1</code>.
+                </li>
+
+                <li>
+                    Explain the difference between a proper fraction
+                    and an improper fraction.
+                    <br>
+                    <strong>Answer:</strong>
+                    A proper fraction has a numerator smaller than
+                    the denominator, for example <code>3/5</code>.
+                    An improper fraction has a numerator greater than
+                    or equal to the denominator, for example
+                    <code>7/5</code> or <code>5/5</code>.
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .answers-toggle {
+        background: none;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: #2b6cb0;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.2s ease;
+    }
+
+    .answers-toggle:hover {
+        color: #1a4971;
+    }
+
+    .answers-toggle .arrow {
+        display: inline-block;
+        font-size: 12px;
+        transition: transform 0.4s ease;
+    }
+
+    .answers-toggle.active .arrow {
+        transform: rotate(90deg);
+    }
+
+    .answers-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.6s cubic-bezier(0, 1, 0, 1);
+    }
+
+    .answers-content.show {
+        max-height: 1000px;
+        transition: max-height 0.7s ease-in-out;
+    }
+
+    .answers-inner {
+        margin-top: 15px;
+        padding: 15px 20px;
+        background-color: #f7fafc;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+    }
+</style>
+
+<script>
+    function toggleAnswers(button) {
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        content.classList.toggle('show');
+    }
+</script>
+  </div>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+</body>
+
+<div class="lesson-navigation">
+  <a id="prev-btn" class="nav-btn">← Previous Part</a>
+  <a id="next-btn" class="nav-btn">Next Part →</a>
+</div>
+
+<script>
+
+const courseMap = [
+
+  "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
+  "lesson1/part4.html", "lesson1/part5.html", "lesson1/part6.html",
+
+  "lesson2/part1.html", "lesson2/part2.html", "lesson2/part3.html", 
+  "lesson2/part4.html", "lesson2/part5.html", "lesson2/part6.html", 
+  "lesson2/part7.html", "lesson2/part8.html",
+
+  "lesson3/part1.html", "lesson3/part2.html", "lesson3/part3.html", 
+  "lesson3/part4.html", "lesson3/part5.html", "lesson3/part6.html", 
+  "lesson3/part7.html", "lesson3/part8.html", "lesson3/part9.html",
+
+  "lesson4/part1.html", "lesson4/part2.html", "lesson4/part3.html", 
+  "lesson4/part4.html", "lesson4/part5.html", "lesson4/part6.html",
+
+  "lesson5/part1.html", "lesson5/part2.html", "lesson5/part3.html", 
+  "lesson5/part4.html", "lesson5/part5.html", "lesson5/part6.html"
+];
+
+
+const currentPath = window.location.pathname;
+const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+if (currentIndex !== -1) {
+
+  if (currentIndex > 0) {
+    prevBtn.href = "../" + courseMap[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.removeAttribute('href');
+  }
+
+
+  if (currentIndex < courseMap.length - 1) {
+    nextBtn.href = "../" + courseMap[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.removeAttribute('href');
+  }
+}
+</script>
+</html>

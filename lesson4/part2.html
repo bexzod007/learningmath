@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Math Room</title>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+  <header class="header">
+    <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+      <a href="../about.html" class="nav-link">About me</a>
+      <a href="../index.html" class="nav-link">Main</a>
+    </nav>
+        <button id="theme-toggle"></button>
+  </header>
+
+<h1>Using Letters for Numbers</h1>
+<div class="lesson-content">
+ <section id="part-2" class="lesson-part">
+
+  <article class="topic-block">
+    <h3>1. The Core Idea: Upgrading Your Math Code</h3>
+    <p>In elementary school, you solved problems with empty shapes: &square; + 5 = 9.</p>
+    <p>In algebra, we simply replace the empty shape &square; with a <strong>letter</strong>.</p>
+    <ul>
+      <li>Arithmetic style: <code>&square; + 5 = 9</code></li>
+      <li>Algebra style: <code>x + 5 = 9</code></li>
+    </ul>
+    <p>Letters are just shorter, cleaner shortcuts to represent numbers.</p>
+  </article>
+
+  <article class="topic-block">
+    <h3>2. Hidden Rules of Algebra</h3>
+    <ol>
+      <li>
+        <strong>The Invisible Multiplication Sign</strong><br>
+        In arithmetic, you write: <code>3 &times; x</code>.<br>
+        In algebra, we write: <code>3x</code>.<br>
+        Putting a number right next to a letter means <strong>multiplication</strong>.<br>
+        <em>Why?</em> Because the multiplication symbol <code>&times;</code> looks too much like the letter <em>x</em>!
+      </li>
+      <li>
+        <strong>The Invisible Number 1</strong><br>
+        If a letter stands completely alone (like <em>y</em>), it actually has a hidden 1 in front of it.<br>
+        <code>y</code> is the exact same thing as <code>1y</code>.<br>
+        <code>-x</code> is the exact same thing as <code>-1x</code>.
+      </li>
+    </ol>
+  </article>
+
+  <article class="topic-block">
+    <h3>3. Real-World Example: Fast Food Order</h3>
+    <p>Imagine ordering at a restaurant where a burger costs <strong>$5</strong> (<em>b</em>) and fries cost <strong>$2</strong> (<em>f</em>).</p>
+    <p>Your total bill can be written as: <code>5b + 2f</code>.</p>
+    <p>If you buy 2 burgers (<em>b = 2</em>) and 3 fries (<em>f = 3</em>):</p>
+    <p><code>5(2) + 2(3) = 10 + 6 = $16</code></p>
+  </article>
+
+  <article class="topic-block">
+    <h3>4. Summary &amp; Definition</h3>
+    <blockquote class="definition">
+      <strong>Definition:</strong> <strong>Using letters for numbers</strong> is the algebraic notation method where variables (like <em>a, b, x</em>) act as placeholders for numeric values in math expressions.
+    </blockquote>
+  </article>
+</section>
+</div>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+</body>
+
+<div class="lesson-navigation">
+  <a id="prev-btn" class="nav-btn">← Previous Part</a>
+  <a id="next-btn" class="nav-btn">Next Part →</a>
+</div>
+
+<script>
+
+const courseMap = [
+
+  "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
+  "lesson1/part4.html", "lesson1/part5.html", "lesson1/part6.html",
+
+  "lesson2/part1.html", "lesson2/part2.html", "lesson2/part3.html", 
+  "lesson2/part4.html", "lesson2/part5.html", "lesson2/part6.html", 
+  "lesson2/part7.html", "lesson2/part8.html",
+
+  "lesson3/part1.html", "lesson3/part2.html", "lesson3/part3.html", 
+  "lesson3/part4.html", "lesson3/part5.html", "lesson3/part6.html", 
+  "lesson3/part7.html", "lesson3/part8.html", "lesson3/part9.html",
+
+  "lesson4/part1.html", "lesson4/part2.html", "lesson4/part3.html", 
+  "lesson4/part4.html", "lesson4/part5.html", "lesson4/part6.html",
+
+  "lesson5/part1.html", "lesson5/part2.html", "lesson5/part3.html", 
+  "lesson5/part4.html", "lesson5/part5.html", "lesson5/part6.html"
+];
+
+
+const currentPath = window.location.pathname;
+const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+if (currentIndex !== -1) {
+
+  if (currentIndex > 0) {
+    prevBtn.href = "../" + courseMap[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.removeAttribute('href');
+  }
+
+
+  if (currentIndex < courseMap.length - 1) {
+    nextBtn.href = "../" + courseMap[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.removeAttribute('href');
+  }
+}
+</script>
+</html>

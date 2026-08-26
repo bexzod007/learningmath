@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Math Room</title>
+</head>
+<body>
+  <header class="header">
+    <img src="../learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+      <a href="about.html" class="nav-link">About me</a>
+    </nav>
+    <button id="theme-toggle"></button>
+  </header>
+  <details class="details">
+    <summary>Lesson 1 (Core Operations)</summary>
+
+    <div class="topics">
+        <a href="lesson1/part1.html" class="part">Part 1: Addition</a>
+        <a href="lesson1/part2.html" class="part">Part 2: Subtraction</a>
+        <a href="lesson1/part3.html" class="part">Part 3: Addition vs Subtraction</a>
+        <a href="lesson1/part4.html" class="part">Part 4: Negative numbers</a>
+        <a href="lesson1/part5.html" class="part">Part 5: Absolute value</a>
+        <a href="lesson1/part6.html" class="part">Part 6: Practice</a>
+    </div>
+</details>
+<details class="details">
+    <summary>Lesson 2 (Fractions & Decimals)</summary>
+
+    <div class="topics">
+        <a href="../mathroom.html/lesson2/part1.html" class="part">Part 1: What is a Fraction?</a>
+        <a href="../mathroom.html/lesson2/part2.html" class="part">Part 2: Numerator & Denominator</a>
+        <a href="../mathroom.html/lesson2/part3.html" class="part">Part 3: Proper Fractions</a>
+        <a href="../mathroom.html/lesson2/part4.html" class="part">Part 4: Improper Fractions</a>
+        <a href="../mathroom.html/lesson2/part5.html" class="part">Part 5: Proper vs Improper Fractions</a>
+        <a href="../mathroom.html/lesson2/part6.html" class="part">Part 6: Comparing Fractions</a>
+        <a href="../mathroom.html/lesson2/part7.html" class="part">Part 7: Example</a>
+        <a href="../mathroom.html/lesson2/part8.html" class="part">Part 8: Practice</a>
+    </div>
+</details>
+<details class="details">
+    <summary>Lesson 3 (Number Theory)</summary>
+
+    <div class="topics">
+        <a href="../mathroom.html/lesson3/part1.html" class="part">Part 1: Prime Numbers</a>
+        <a href="../mathroom.html/lesson3/part2.html" class="part">Part 2: Composite Numbers</a>
+        <a href="../mathroom.html/lesson3/part3.html" class="part">Part 3: Factors</a>
+        <a href="../mathroom.html/lesson3/part4.html" class="part">Part 4: Multiples</a>
+        <a href="../mathroom.html/lesson3/part5.html" class="part">Part 5: Prime Factorization</a>
+        <a href="../mathroom.html/lesson3/part6.html" class="part">Part 6: GCD</a>
+        <a href="../mathroom.html/lesson3/part7.html" class="part">Part 7: LCM</a>
+        <a href="../mathroom.html/lesson3/part8.html" class="part">Part 8. Order of Operations — PEMDAS / BODMAS</a>
+        <a href="../mathroom.html/lesson3/part9.html" class="part">Part 9: Practice</a>
+    </div>
+</details>
+  <details class="details">
+    <summary>Lesson 4 (Variables & Expressions)</summary>
+
+    <div class="topics">
+        <a href="lesson4/part1.html" class="part">Part 1: What is a Variable?</a>
+        <a href="lesson4/part2.html" class="part">Part 2: Using Letters for Numbers</a>
+        <a href="lesson4/part3.html" class="part">Part 3: Constants</a>
+        <a href="lesson4/part4.html" class="part">Part 4: Coefficients</a>
+        <a href="lesson4/part5.html" class="part">Part 5: Variables vs Constants</a>
+        <a href="lesson4/part6.html" class="part">Part 6: Practice</a>
+    </div>
+</details>
+
+  <details class="details">
+    <summary>Lesson 5 (Algebraic Expressions)</summary>
+
+    <div class="topics">
+        <a href="lesson5/part1.html" class="part">Part 1:What is an Expression?</a>
+        <a href="lesson5/part2.html" class="part">Part 2: Terms</a>
+        <a href="lesson5/part3.html" class="part">Part 3: Coefficients</a>
+        <a href="lesson5/part4.html" class="part">Part 4: Writing Expressions</a>
+        <a href="lesson5/part5.html" class="part">Part 5: Evaluating Expressions</a>
+        <a href="lesson5/part6.html" class="part">Part 6: Practice</a>
+    </div>
+</details>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+</body>
+</html>

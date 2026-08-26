@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Math Room</title>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+  <header class="header">
+    <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+      <a href="../about.html" class="nav-link">About me</a>
+      <a href="../index.html" class="nav-link">Main</a>
+    </nav>
+        <button id="theme-toggle"></button>
+  </header>
+
+<h1>Practice</h1>
+<div class="lesson-content">
+<!-- Part 6: Practice -->
+<section id="part-6" class="lesson-part">
+
+  <article class="topic-block">
+    <h3>Exercise A: Identifying Parts of an Expression</h3>
+    <p>For the expression <code>8x² - 3x + 15</code>:</p>
+    <ol>
+      <li>How many terms are in this expression?</li>
+      <li>What is the coefficient of <em>x</em>?</li>
+      <li>What is the constant term?</li>
+      <li>What is the variable?</li>
+    </ol>
+  </article>
+
+  <article class="topic-block">
+    <h3>Exercise B: Translating Words to Math</h3>
+    <p>Write an algebraic expression for each phrase:</p>
+    <ol>
+      <li>A number <em>n</em> increased by 12</li>
+      <li>7 less than a number <em>y</em></li>
+      <li>The product of 5 and a number <em>k</em></li>
+      <li>4 more than double a number <em>x</em></li>
+    </ol>
+  </article>
+
+  <article class="topic-block">
+    <h3>Exercise C: Evaluating Expressions</h3>
+    <p>Evaluate each expression when <code>a = 3</code> and <code>b = 5</code>:</p>
+    <ol>
+      <li><code>2a + b</code></li>
+      <li><code>4b - 3a</code></li>
+      <li><code>a² + 2b</code></li>
+      <li><code>5(b - a)</code></li>
+    </ol>
+  </article>
+
+  <article class="topic-block answer-key">
+    <h3>Answer Key</h3>
+
+    <details>
+      <summary class="answer">🔍 Click here to reveal the Answers</summary>
+
+      <div class="answers-wrapper">
+        <h4>Exercise A:</h4>
+        <ul>
+          <li>Number of terms: <strong>3</strong> (<code>8x²</code>, <code>-3x</code>, and <code>15</code>)</li>
+          <li>Coefficient of <em>x</em>: <strong>-3</strong></li>
+          <li>Constant term: <strong>15</strong></li>
+          <li>Variable: <strong>x</strong></li>
+        </ul>
+
+        <h4>Exercise B:</h4>
+        <ol>
+          <li><code>n + 12</code></li>
+          <li><code>y - 7</code> (Remember: "less than" turns the order around!)</li>
+          <li><code>5k</code></li>
+          <li><code>2x + 4</code></li>
+        </ol>
+
+        <h4>Exercise C:</h4>
+        <ol>
+          <li><code>2(3) + 5 = 6 + 5 = 11</code></li>
+          <li><code>4(5) - 3(3) = 20 - 9 = 11</code></li>
+          <li><code>(3)² + 2(5) = 9 + 10 = 19</code></li>
+          <li><code>5(5 - 3) = 5(2) = 10</code></li>
+        </ol>
+      </div>
+    </details>
+  </article>
+
+</section>
+</div>
+
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+</body>
+
+<div class="lesson-navigation">
+  <a id="prev-btn" class="nav-btn">← Previous Part</a>
+  <a id="next-btn" class="nav-btn">Next Part →</a>
+</div>
+
+<script>
+
+const courseMap = [
+
+  "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
+  "lesson1/part4.html", "lesson1/part5.html", "lesson1/part6.html",
+
+  "lesson2/part1.html", "lesson2/part2.html", "lesson2/part3.html", 
+  "lesson2/part4.html", "lesson2/part5.html", "lesson2/part6.html", 
+  "lesson2/part7.html", "lesson2/part8.html",
+
+  "lesson3/part1.html", "lesson3/part2.html", "lesson3/part3.html", 
+  "lesson3/part4.html", "lesson3/part5.html", "lesson3/part6.html", 
+  "lesson3/part7.html", "lesson3/part8.html", "lesson3/part9.html",
+
+  "lesson4/part1.html", "lesson4/part2.html", "lesson4/part3.html", 
+  "lesson4/part4.html", "lesson4/part5.html", "lesson4/part6.html",
+
+  "lesson5/part1.html", "lesson5/part2.html", "lesson5/part3.html", 
+  "lesson5/part4.html", "lesson5/part5.html", "lesson5/part6.html"
+];
+
+
+const currentPath = window.location.pathname;
+const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+if (currentIndex !== -1) {
+
+  if (currentIndex > 0) {
+    prevBtn.href = "../" + courseMap[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.removeAttribute('href');
+  }
+
+
+  if (currentIndex < courseMap.length - 1) {
+    nextBtn.href = "../" + courseMap[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.removeAttribute('href');
+  }
+}
+</script>
+</html>

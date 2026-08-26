@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Math Room</title>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+  <header class="header">
+    <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+      <a href="../about.html" class="nav-link">About me</a>
+      <a href="../index.html" class="nav-link">Main</a>
+    </nav>
+        <button id="theme-toggle"></button>
+  </header>
+
+<h1>Coefficients</h1>
+<div class="lesson-content">
+
+<section id="part-3">
+  <p>When a number is glued directly to the front of a variable, that number is called a <strong>coefficient</strong>. It simply tells you how many copies of that variable you have.</p>
+
+  <h3>1. Visualizing Coefficients</h3>
+  <ul>
+    <li><code>4x</code> means <code>x + x + x + x</code>. The coefficient is <strong>4</strong>.</li>
+    <li><code>3a</code> means <code>a + a + a</code>. The coefficient is <strong>3</strong>.</li>
+    <li><code>-5y</code> means 5 negative copies of <em>y</em>. The coefficient is <strong>-5</strong>.</li>
+  </ul>
+
+  <h3>2. The Invisible Coefficient Rule (The #1 Beginner Trap)</h3>
+  <p>What is the coefficient of <em>x</em> when you just see the letter by itself?</p>
+  <p>If you see <code>x</code>, it means <strong>1x</strong>. The coefficient is <strong>1</strong>!</p>
+  <p>If you see <code>-x</code>, it means <strong>-1x</strong>. The coefficient is <strong>-1</strong>!</p>
+
+  <blockquote>
+    <p><strong>Memory Trick:</strong> If you buy an apple, you don't say <em>"I bought 1 apple."</em> You just say <em>"I bought an apple."</em> The number 1 is automatically understood. Algebra works the exact same way!</p>
+  </blockquote>
+
+  <h3>3. Comparing Components of an Expression</h3>
+  <p>Let's dissect the expression: <code>9x&sup2; - 4x + 7</code></p>
+  <ul>
+    <li><strong>Variable:</strong> <code>x</code></li>
+    <li><strong>Exponents:</strong> <code>2</code> (on the first term)</li>
+    <li><strong>Coefficients:</strong> <code>9</code> (for <em>x&sup2;</em>) and <code>-4</code> (for <em>x</em>)</li>
+    <li><strong>Constant:</strong> <code>+7</code> (stands alone without any variable)</li>
+  </ul>
+</section>
+</div>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+</body>
+
+<div class="lesson-navigation">
+  <a id="prev-btn" class="nav-btn">← Previous Part</a>
+  <a id="next-btn" class="nav-btn">Next Part →</a>
+</div>
+
+<script>
+
+const courseMap = [
+
+  "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
+  "lesson1/part4.html", "lesson1/part5.html", "lesson1/part6.html",
+
+  "lesson2/part1.html", "lesson2/part2.html", "lesson2/part3.html", 
+  "lesson2/part4.html", "lesson2/part5.html", "lesson2/part6.html", 
+  "lesson2/part7.html", "lesson2/part8.html",
+
+  "lesson3/part1.html", "lesson3/part2.html", "lesson3/part3.html", 
+  "lesson3/part4.html", "lesson3/part5.html", "lesson3/part6.html", 
+  "lesson3/part7.html", "lesson3/part8.html", "lesson3/part9.html",
+
+  "lesson4/part1.html", "lesson4/part2.html", "lesson4/part3.html", 
+  "lesson4/part4.html", "lesson4/part5.html", "lesson4/part6.html",
+
+  "lesson5/part1.html", "lesson5/part2.html", "lesson5/part3.html", 
+  "lesson5/part4.html", "lesson5/part5.html", "lesson5/part6.html"
+];
+
+
+const currentPath = window.location.pathname;
+const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+if (currentIndex !== -1) {
+
+  if (currentIndex > 0) {
+    prevBtn.href = "../" + courseMap[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.removeAttribute('href');
+  }
+
+
+  if (currentIndex < courseMap.length - 1) {
+    nextBtn.href = "../" + courseMap[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.removeAttribute('href');
+  }
+}
+</script>
+</html>
