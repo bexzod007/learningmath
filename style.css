@@ -237,38 +237,6 @@ button:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Выравнивание контейнера футера */
-footer {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 40px 0 !important;
-  padding-bottom: 60px;
-}
-
-
-.fancy-btn {
-  display: inline-block !important;
-  padding: 14px 32px !important;
-  border-radius: 8px !important;
-  font-weight: 600 !important;
-  font-size: 16px !important;
-  letter-spacing: 0.05em;
-  border: 2px solid #f97316 !important;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  background-color: #f97316 !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4) !important;
-}
-
-.fancy-btn:hover {
-  background-color: #ea580c !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.6) !important;
-}
 /* ---------dark theme----------- */
 
 body.dark-theme {
