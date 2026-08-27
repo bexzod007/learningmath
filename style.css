@@ -243,11 +243,11 @@ button:hover {
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.05em;
-  border: none;
+  border: 2px solid #f97316;
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  background: linear-gradient(135deg, #1e0a4a 0%, #2d1b69 50%, #1a0a3d 100%);
+  background: #2d1b69;
   color: #f97316;
   box-shadow: 0 0 24px rgba(88, 28, 220, 0.35), 0 4px 12px rgba(0, 0, 0, 0.4);
 }
