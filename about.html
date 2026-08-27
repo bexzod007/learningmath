@@ -8,72 +8,70 @@
 </head>
 <body>
   <div class="scroll-progress"></div>
-    <header class="header">
+
+  <header class="header">
     <img src="../learningmath/logo.png" alt="mathroom logo" class="logo"/>
     <nav class="nav">
       <a href="index.html" class="nav-link">Main</a>
     </nav>
     <button id="theme-toggle"></button>
   </header>
+
   <div class="lesson-content">
     <div class="about-section">
-  <div class="container">
-    <h1 class="about-title">About Math Room</h1>
-    <p class="about-subtitle">A space where mathematics becomes clear, accessible, and engaging for everyone.</p>
+      <div class="container">
+        <h1 class="about-title">About Math Room</h1>
+        <p class="about-subtitle">A space where mathematics becomes clear, accessible, and engaging for everyone.</p>
 
-    <article class="about-block">
-      <h2>What this site is about?</h2>
-      <p>
-        <strong>Math Room</strong> is an educational platform designed to help students master mathematics without mindless memorization. Complex formulas and abstract concepts are explained in clear language, using interactive lessons and visual examples to make even the toughest topics easy to digest.
-      </p>
-    </article>
+        <article class="about-block">
+          <h2>What this site is about?</h2>
+          <p>
+            <strong>Math Room</strong> is an educational platform designed to help students master mathematics without mindless memorization. Complex formulas and abstract concepts are explained in clear language, using interactive lessons and visual examples to make even the toughest topics easy to digest.
+          </p>
+        </article>
 
-    <article class="about-block">
-      <h2>Why this project was created?</h2>
-      <p>
-        Many people see math as boring or overwhelmingly difficult. This project was built to change that mindset. The main goal of Math Room is to demonstrate that mathematics is a logical, elegant, and practical tool. The site helps learners solidify fundamentals, prepare for exams, and solve problems with confidence.
-      </p>
-    </article>
+        <article class="about-block">
+          <h2>Why this project was created?</h2>
+          <p>
+            Many people see math as boring or overwhelmingly difficult. This project was built to change that mindset. The main goal of Math Room is to demonstrate that mathematics is a logical, elegant, and practical tool. The site helps learners solidify fundamentals, prepare for exams, and solve problems with confidence.
+          </p>
+        </article>
 
-    <article class="about-block">
-      <h2>Who is behind the project?</h2>
-      <p>
-        My name is <strong>Bekhzod</strong>. I am a web developer passionate about mathematics and exact sciences. Building Math Room allowed me to combine my love for programming with a desire to make learning accessible and intuitive for everyone. I design the interface and craft the materials independently to ensure a smooth, enjoyable learning experience at your own pace.
-      </p>
-    </article>
+        <article class="about-block">
+          <h2>Who is behind the project?</h2>
+          <p>
+            My name is <strong>Bekhzod</strong>. I am a web developer passionate about mathematics and exact sciences. Building Math Room allowed me to combine my love for programming with a desire to make learning accessible and intuitive for everyone. I design the interface and craft the materials independently to ensure a smooth, enjoyable learning experience at your own pace.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <footer>
+      <button class="fancy-btn">Get started</button>
+    </footer>
   </div>
-</div>
-</section>
-<footer>
-  <button class="fancy-btn">Get started</button>
-</footer>
-  </div>
 
-<script>
-const toggleBtn = document.getElementById('theme-toggle');
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
 
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+      toggleBtn.textContent = '☀️'; 
+    } else {
+      toggleBtn.textContent = '🌙'; 
+    }
 
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-theme');
-  toggleBtn.textContent = '☀️'; 
-} else {
-  toggleBtn.textContent = '🌙'; 
-}
-
-
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-theme');
-  
-  if (document.body.classList.contains('dark-theme')) {
-    toggleBtn.textContent = '☀️';
-    localStorage.setItem('theme', 'dark'); 
-  } else {
-    toggleBtn.textContent = '🌙';
-    localStorage.setItem('theme', 'light'); 
-  }
-});
-
-
-</script>
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      
+      if (document.body.classList.contains('dark-theme')) {
+        toggleBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'dark'); 
+      } else {
+        toggleBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'light'); 
+      }
+    });
+  </script>
 </body>
 </html>
