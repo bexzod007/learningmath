@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Math Room</title>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+  <header class="header">
+    <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+      <a href="../about.html" class="nav-link">About me</a>
+      <a href="../index.html" class="nav-link">Main</a>
+    </nav>
+        <button id="theme-toggle"></button>
+  </header>
+
+<h1>What is an Expression?</h1>
+<div class="lesson-content">
+
+<section id="part-6" class="lesson-part">
+
+  <article class="topic-block">
+    <h3>Exercise A: Identifying Like Terms</h3>
+    <p>Group the following terms into sets of like terms:</p>    <p><code>5x, 3y, -2x, 8, 7y, 12</code></p>
+    <ol>
+      <li>Which terms belong to the <em>x</em> family?</li>
+      <li>Which terms belong to the <em>y</em> family?</li>
+      <li>Which terms are plain numbers (constants)?</li>
+    </ol>
+  </article>
+
+  <article class="topic-block">
+    <h3>Exercise B: Simplifying Basic Addition & Subtraction</h3>
+    <p>Simplify each expression by combining like terms:</p>
+    <ol>
+      <li><code>4a + 9a</code></li>
+      <li><code>15k - 6k</code></li>
+      <li><code>7m + 2m - 4m</code></li>
+      <li><code>12p - 5p - 3p</code></li>
+    </ol>
+  </article>
+
+  <article class="topic-block">
+    <h3>Exercise C: Simplifying Multiple Terms</h3>
+    <p>Simplify each multi-term expression:</p>
+    <ol>
+      <li><code>5x + 3 + 2x + 8</code></li>
+      <li><code>9a + 4b - 3a + 2b</code></li>
+      <li><code>6y + 10 - 2y - 4</code></li>
+      <li><code>8m + 5n - 3m - 2n + 7</code></li>
+    </ol>
+  </article>
+
+  <article class="topic-block answer-key">
+    <h3>Answer Key</h3>
+
+    <details>
+      <summary class="answer">🔍 Click here to reveal the Answers</summary>
+
+      <div class="answers-wrapper">
+        <h4>Exercise A:</h4>
+        <ul>
+          <li><em>x</em> family: <strong>5x and -2x</strong></li>
+          <li><em>y</em> family: <strong>3y and 7y</strong></li>
+          <li>Constants: <strong>8 and 12</strong></li>
+        </ul>
+
+        <h4>Exercise B:</h4>
+        <ol>
+          <li><code>(4 + 9)a =</code> <strong>13a</strong></li>
+          <li><code>(15 - 6)k =</code> <strong>9k</strong></li>
+          <li><code>(7 + 2 - 4)m =</code> <strong>5m</strong></li>
+          <li><code>(12 - 5 - 3)p =</code> <strong>4p</strong></li>
+        </ol>
+
+        <h4>Exercise C:</h4>
+        <ol>
+          <li><code>(5x + 2x) + (3 + 8) =</code> <strong>7x + 11</strong></li>
+          <li><code>(9a - 3a) + (4b + 2b) =</code> <strong>6a + 6b</strong></li>
+          <li><code>(6y - 2y) + (10 - 4) =</code> <strong>4y + 6</strong></li>
+          <li><code>(8m - 3m) + (5n - 2n) + 7 =</code> <strong>5m + 3n + 7</strong></li>
+        </ol>
+      </div>
+    </details>
+  </article>
+
+</section>
+</div>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+</body>
+
+<div class="lesson-navigation">
+  <a id="prev-btn" class="nav-btn">← Previous Part</a>
+  <a id="next-btn" class="nav-btn">Next Part →</a>
+</div>
+
+<script>
+
+const courseMap = [
+
+  "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
+  "lesson1/part4.html", "lesson1/part5.html", "lesson1/part6.html",
+
+  "lesson2/part1.html", "lesson2/part2.html", "lesson2/part3.html", 
+  "lesson2/part4.html", "lesson2/part5.html", "lesson2/part6.html", 
+  "lesson2/part7.html", "lesson2/part8.html",
+
+  "lesson3/part1.html", "lesson3/part2.html", "lesson3/part3.html", 
+  "lesson3/part4.html", "lesson3/part5.html", "lesson3/part6.html", 
+  "lesson3/part7.html", "lesson3/part8.html", "lesson3/part9.html",
+
+  "lesson4/part1.html", "lesson4/part2.html", "lesson4/part3.html", 
+  "lesson4/part4.html", "lesson4/part5.html", "lesson4/part6.html",
+
+  "lesson5/part1.html", "lesson5/part2.html", "lesson5/part3.html", 
+  "lesson5/part4.html", "lesson5/part5.html", "lesson5/part6.html"
+];
+
+
+const currentPath = window.location.pathname;
+const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+if (currentIndex !== -1) {
+
+  if (currentIndex > 0) {
+    prevBtn.href = "../" + courseMap[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.removeAttribute('href');
+  }
+
+
+  if (currentIndex < courseMap.length - 1) {
+    nextBtn.href = "../" + courseMap[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.removeAttribute('href');
+  }
+}
+</script>
+</html>
