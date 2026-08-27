@@ -239,13 +239,14 @@ button:hover {
 
 footer {
   display: block !important;
-  margin-top: 40px;
-  padding-bottom: 60px;
   text-align: center;
-  width: 100%;
+  margin-top: 50px;
+  padding-bottom: 80px;
 }
 
+/* Яркие контрастные стили для кнопки */
 .fancy-btn {
+  display: inline-block !important;
   padding: 14px 32px;
   border-radius: 8px;
   font-weight: 600;
@@ -255,19 +256,14 @@ footer {
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  background: #2d1b69;
-  color: #f97316;
-  box-shadow: 0 0 24px rgba(88, 28, 220, 0.35), 0 4px 12px rgba(0, 0, 0, 0.4);
+  background: #f97316 !important; /* Яркий оранжевый фон */
+  color: #ffffff !important;      /* Белый текст */
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.5);
 }
 
 .fancy-btn:hover {
-  background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #ea580c 100%);
-  color: #4f1fb8;
-  box-shadow:
-    0 0 40px rgba(249, 115, 22, 0.8),
-    0 0 80px rgba(249, 115, 22, 0.4),
-    0 8px 24px rgba(249, 115, 22, 0.5);
-  transform: translateY(-1px);
+  background: #ea580c !important;
+  transform: translateY(-2px);
 }
 /* ---------dark theme----------- */
 
