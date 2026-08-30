@@ -7,8 +7,8 @@
   <title>Math Room</title>
 </head>
 <body>
-  <div class="scroll-progress"></div>
-    <header class="header">
+    <div class="scroll-progress"></div>
+  <header class="header">
     <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
     <nav class="nav">
       <a href="../about.html" class="nav-link">About me</a>
@@ -16,27 +16,41 @@
     </nav>
         <button id="theme-toggle"></button>
   </header>
-  <h1>Addition vs Subtraction</h1>
-  <div class="lesson-content">
-    <p>The easiest way to remember the difference:</p>
 
-    <ul>
-        <li><strong>Addition</strong> → putting things together: <br><code>5 + 3 = 8</code></li>
-        <li><strong>Subtraction</strong> → taking things away: <br><code>8 − 3 = 5</code></li>
-    </ul>
+<h1>Distributing with Positive Numbers</h1>
+<div class="lesson-content">
 
-    <p>They are <strong>inverse operations</strong>, which means they are opposite mathematical processes.</p>
+<section class="lesson-part" id="part-3">
+  <p>
+    When the multiplier outside the parentheses is positive, the original mathematical signs ($+$ or $-$) of the terms inside the parentheses <strong>remain unchanged</strong>.
+  </p>
 
-    <p><strong>For example:</strong></p>
+  <p><strong>Case A: Positive Multiplier with Addition</strong></p>
+  <p>Example: $6(3y + 4)$</p>
+  <ul>
+    <li>$6 \cdot 3y = 18y$</li>
+    <li>$6 \cdot (+4) = +24$</li>
+    <li><strong>Final Expression:</strong> $18y + 24$</li>
+  </ul>
 
-    <p>If <code>5 + 3 = 8</code>, then <code>8 − 3 = 5</code>.</p>
+  <p><strong>Case B: Positive Multiplier with Subtraction</strong></p>
+  <p>Example: $5(4a - 3)$</p>
+  <ul>
+    <li>$5 \cdot 4a = 20a$</li>
+    <li>$5 \cdot (-3) = -15$</li>
+    <li><strong>Final Expression:</strong> $20a - 15$</li>
+  </ul>
 
-    <p>Because of this, addition and subtraction can effectively <strong>"undo"</strong> each other.</p>
-    <div class="tip-box">
-  💡 <strong>Pro Tip:</strong> Addition and subtraction are inverse operations! <br>
-  If <code>5 + 3 = 8</code>, then <code>8 - 3 = 5</code> — they can always "undo" each other.
+  <p><strong>Case C: Distributing to Three Terms (Trinomials)</strong></p>
+  <p>Example: $2(x^2 + 3x - 5)$</p>
+  <ul>
+    <li>$2 \cdot x^2 = 2x^2$</li>
+    <li>$2 \cdot 3x = 6x$</li>
+    <li>$2 \cdot (-5) = -10$</li>
+    <li><strong>Final Expression:</strong> $2x^2 + 6x - 10$</li>
+  </ul>
+</section>
 </div>
-  </div>  
 
 <script>
 const toggleBtn = document.getElementById('theme-toggle');
@@ -101,6 +115,7 @@ const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
 if (currentIndex !== -1) {
+
   if (currentIndex > 0) {
     prevBtn.href = "../" + courseMap[currentIndex - 1];
   } else {

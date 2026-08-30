@@ -7,57 +7,36 @@
   <title>Math Room</title>
 </head>
 <body>
-  <div class="scroll-progress"></div>
+    <div class="scroll-progress"></div>
   <header class="header">
     <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
     <nav class="nav">
-    <a href="../about.html" class="nav-link">About me</a>
-    <a href="../index.html" class="nav-link">Main</a>
+      <a href="../about.html" class="nav-link">About me</a>
+      <a href="../index.html" class="nav-link">Main</a>
     </nav>
         <button id="theme-toggle"></button>
   </header>
-  <h1 class="part1">Part 1: Addition</h1>
- <div class="lesson-content">
-  <h2>Part 1: Addition</h2>
+
+<h1>What is the Distributive Property?</h1>
+<div class="lesson-content">
+
+<section class="lesson-part" id="part-1">
+  <p>
+    The <strong>Distributive Property</strong> (or Distributive Law) is one of the most frequently used algebraic properties. It states that multiplying a number by a group of terms added or subtracted inside parentheses is equal to multiplying each term individually and then combining the results.
+  </p>
   
-  <p>Addition means putting numbers together.</p>
-  <p>The symbol for addition is: <strong>+</strong></p>
+  <p class="formula">Algebraic Rule: $a(b + c) = ab + ac$ &nbsp;|&nbsp; $a(b - c) = ab - ac$</p>
 
-  <h3>Example:</h3>
-  <p><strong>3 + 2 = 5</strong></p>
-  <p>Think about having 3 apples and getting 2 more:</p>
-  <p>🍎🍎🍎 + 🍎🍎 = 🍎🍎🍎🍎🍎</p>
-  <p>So the answer is <strong>5</strong>.</p>
-
-  <h3>Important words:</h3>
-  <p>In <strong>3 + 2 = 5</strong>:</p>
+  <p><strong>Why does it work?</strong> Think of a real-world scenario:</p>
+  <p>
+    Suppose you buy 3 school kits. Each kit contains 1 notebook ($x) and 1 pen ($2).
+  </p>
   <ul>
-    <li><strong>3</strong> → addend</li>
-    <li><strong>2</strong> → addend</li>
-    <li><strong>5</strong> → sum</li>
+    <li><strong>Method 1 (Grouped):</strong> Calculate the cost of one kit first, then multiply by 3: $3(x + 2)$</li>
+    <li><strong>Method 2 (Distributed):</strong> Pay for 3 notebooks and 3 pens separately: $3 \cdot x + 3 \cdot 2 = 3x + 6$</li>
   </ul>
-  <p>The result of addition is called the <strong>sum</strong>.</p>
-
-  <h3>Another example: 17 + 25</h3>
-  <p>Break it down:</p>
-  
-  <pre class="math-column">
-  17
-+ 25
-----
-  42
-  </pre>
-
-  <ol>
-    <li>First add the ones: <strong>7 + 5 = 12</strong>. Write <strong>2</strong> in the ones position and carry <strong>1</strong>.</li>
-    <li>Then: <strong>1 + 2 + 1 = 4</strong></li>
-  </ol>
-
-  <p>Therefore: <strong>17 + 25 = 42</strong></p>
-  <div class="tip-box">
-  💡 <strong>Pro Tip:</strong> Order does not matter in addition! <br>
-  <code>3 + 2</code> is the exact same as <code>2 + 3</code>.
-</div>
+  <p>Both methods yield the exact same financial cost, proving that $3(x + 2) = 3x + 6$.</p>
+</section>
 </div>
 
 <script>
@@ -94,7 +73,7 @@ toggleBtn.addEventListener('click', () => {
 </div>
 
 <script>
-// Полный массив всех уроков по порядку
+
 const courseMap = [
 
   "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
@@ -113,7 +92,9 @@ const courseMap = [
 
   "lesson5/part1.html", "lesson5/part2.html", "lesson5/part3.html", 
   "lesson5/part4.html", "lesson5/part5.html", "lesson5/part6.html"
+
 ];
+
 
 const currentPath = window.location.pathname;
 const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
@@ -122,12 +103,14 @@ const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
 if (currentIndex !== -1) {
+
   if (currentIndex > 0) {
     prevBtn.href = "../" + courseMap[currentIndex - 1];
   } else {
     prevBtn.classList.add('disabled');
     prevBtn.removeAttribute('href');
   }
+
 
   if (currentIndex < courseMap.length - 1) {
     nextBtn.href = "../" + courseMap[currentIndex + 1];
@@ -137,5 +120,4 @@ if (currentIndex !== -1) {
   }
 }
 </script>
-
 </html>

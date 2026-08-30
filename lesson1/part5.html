@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<body lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,8 @@
   <title>Math Room</title>
 </head>
 <body>
-  <div class="scroll-progress"></div>
-    <header class="header">
+    <div class="scroll-progress"></div>
+  <header class="header">
     <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
     <nav class="nav">
       <a href="../about.html" class="nav-link">About me</a>
@@ -16,42 +16,40 @@
     </nav>
         <button id="theme-toggle"></button>
   </header>
-</body>
-<h1>Absolute value</h1>
+
+<h1>Simplifying After Distribution</h1>
 <div class="lesson-content">
-  <h2>Understanding Absolute Value</h2>
 
-<p>The <strong>absolute value</strong> of a number represents its <strong>distance from zero</strong> on a number line, regardless of the direction. Because distance is always a positive quantity (or zero), <strong>absolute value is never negative</strong>.</p>
+<section class="lesson-part" id="part-5">
+  <p>
+    Expanding expressions using the distributive property is often just the first step in algebraic simplification. Once parentheses are removed, you must identify and <strong>combine like terms</strong> (terms with identical variable components and exponents).
+  </p>
 
-<p>In mathematics, we write absolute value using two vertical bars on either side of the number: <code>| |</code></p>
+  <p><strong>Standard Algorithm for Multi-step Simplification:</strong></p>
+  <ol>
+    <li><strong>Distribute:</strong> Clear all parentheses by performing multiplication.</li>
+    <li><strong>Group:</strong> Rearrange terms so that like terms are adjacent.</li>
+    <li><strong>Combine:</strong> Add or subtract the numerical coefficients of like terms.</li>
+  </ol>
 
-<div class="white">
-  &larr; &nbsp; 5 units to zero &nbsp; &mdash; &nbsp; 0 &nbsp; &mdash; &nbsp; 5 units to zero &nbsp; &rarr;<br>
-  <strong>-5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5</strong>
+  <p><strong>Detailed Example 1: Expression with External Terms</strong></p>
+  <p>Simplify: $3(2x + 4) + 5x - 7$</p>
+  <ul>
+    <li><strong>Step 1 (Distribute):</strong> $(3 \cdot 2x) + (3 \cdot 4) + 5x - 7 \longrightarrow 6x + 12 + 5x - 7$</li>
+    <li><strong>Step 2 (Group):</strong> $(6x + 5x) + (12 - 7)$</li>
+    <li><strong>Step 3 (Combine):</strong> $11x + 5$</li>
+  </ul>
+
+  <p><strong>Detailed Example 2: Multiple Parentheses</strong></p>
+  <p>Simplify: $-2(3y - 1) + 4(y + 3)$</p>
+  <ul>
+    <li><strong>Step 1 (Distribute both):</strong> $-6y + 2 + 4y + 12$</li>
+    <li><strong>Step 2 (Group):</strong> $(-6y + 4y) + (2 + 12)$</li>
+    <li><strong>Step 3 (Combine):</strong> $-2y + 14$</li>
+  </ul>
+</section>
 </div>
 
-<p><strong>Examples:</strong></p>
-
-<ul>
-    <li><code>|5| = 5</code> &rarr; because 5 is 5 units away from zero.</li>
-    <li><code>|-5| = 5</code> &rarr; because -5 is also exactly 5 units away from zero.</li>
-    <li><code>|-10| = 10</code> &rarr; the negative sign is removed to measure pure distance.</li>
-    <li><code>|10| = 10</code> &rarr; positive numbers remain unchanged.</li>
-</ul>
-
-<h3>Real-World Analogy</h3>
-<p>Think of absolute value like walking a distance on a street:</p>
-<ul>
-    <li>If you walk <strong>5 blocks East</strong> (positive direction), you walked <strong>5 blocks</strong>.</li>
-    <li>If you walk <strong>5 blocks West</strong> (negative direction), you still walked <strong>5 blocks</strong>.</li>
-</ul>
-<p>The total distance traveled is always positive, regardless of which direction you headed.</p>
-
-<div class="tip-box">
-  💡 <strong>Pro Tip:</strong> The magnitude rule! <br>
-  You can think of absolute value as a "sign stripper"—it simply removes any negative sign and leaves the bare numerical size (magnitude) of the number.
-</div>
-</div>
 <script>
 const toggleBtn = document.getElementById('theme-toggle');
 
@@ -88,7 +86,7 @@ toggleBtn.addEventListener('click', () => {
 <script>
 
 const courseMap = [
- 
+
   "lesson1/part1.html", "lesson1/part2.html", "lesson1/part3.html", 
   "lesson1/part4.html", "lesson1/part5.html", "lesson1/part6.html",
 

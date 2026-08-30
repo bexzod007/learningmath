@@ -7,7 +7,7 @@
   <title>Math Room</title>
 </head>
 <body>
-  <div class="scroll-progress"></div>
+    <div class="scroll-progress"></div>
   <header class="header">
     <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
     <nav class="nav">
@@ -16,54 +16,46 @@
     </nav>
         <button id="theme-toggle"></button>
   </header>
-  <h1>Multiples</h1>
-  <div class="lesson-content">
 
-<p>
-    A <strong>multiple</strong> is the result of multiplying a number
-    by a whole number.
-</p>
+<h1>Distributing with Negative Numbers</h1>
+<div class="lesson-content">
 
-<h3>Example</h3>
+<section class="lesson-part" id="part-4">
+  <p>
+    When distributing a negative multiplier, you must flip the sign of <strong>every term</strong> inside the parentheses. This is the most common area for computational errors in algebra.
+  </p>
 
-<p>
-    Let's find the multiples of <strong>5</strong>.
-</p>
+  <p><strong>Core Sign Rules:</strong></p>
+  <ul>
+    <li>Negative $\cdot$ Positive = Negative ($-\cdot + = -$)</li>
+    <li>Negative $\cdot$ Negative = Positive ($-\cdot - = +$)</li>
+  </ul>
 
-<p><strong>5 × 1 = 5</strong></p>
+  <p><strong>Example 1: Single Negative Factor</strong></p>
+  <p>Simplify: $-3(2x + 4)$</p>
+  <ul>
+    <li>$-3 \cdot 2x = -6x$</li>
+    <li>$-3 \cdot (+4) = -12$</li>
+    <li><strong>Result:</strong> $-6x - 12$</li>
+  </ul>
 
-<p><strong>5 × 2 = 10</strong></p>
+  <p><strong>Example 2: Double Negative Operations</strong></p>
+  <p>Simplify: $-4(3m - 5)$</p>
+  <ul>
+    <li>$-4 \cdot 3m = -12m$</li>
+    <li>$-4 \cdot (-5) = +20$</li>
+    <li><strong>Result:</strong> $-12m + 20$</li>
+  </ul>
 
-<p><strong>5 × 3 = 15</strong></p>
-
-<p><strong>5 × 4 = 20</strong></p>
-
-<p><strong>5 × 5 = 25</strong></p>
-
-<p>
-    Therefore:
-</p>
-
-<p><strong>5, 10, 15, 20, 25, ...</strong></p>
-
-<h3>Factors vs Multiples</h3>
-
-<p>
-    <strong>Factors</strong> divide a number exactly.
-</p>
-
-<p>
-    <strong>Multiples</strong> are created by multiplying a number.
-</p>
-
-<div class="key-point">
-    <strong>💡 Easy way to remember:</strong>
-    <br><br>
-    Factors → go into a number.
-    <br>
-    Multiples → come from a number.
+  <p><strong>Example 3: The Invisible "-1" Multiplier</strong></p>
+  <p>When you see a simple negative sign in front of parentheses like $-(x - 7)$, it represents $-1 \cdot (x - 7)$:</p>
+  <ul>
+    <li>$-1 \cdot x = -x$</li>
+    <li>$-1 \cdot (-7) = +7$</li>
+    <li><strong>Result:</strong> $-x + 7$</li>
+  </ul>
+</section>
 </div>
-  </div>
 
 <script>
 const toggleBtn = document.getElementById('theme-toggle');

@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="scroll-progress"></div>
-    <header class="header">
+  <header class="header">
     <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
     <nav class="nav">
       <a href="../about.html" class="nav-link">About me</a>
@@ -16,124 +16,76 @@
     </nav>
         <button id="theme-toggle"></button>
   </header>
-  <h1>Practice</h1>
-  <div class="lesson-content">
-    <h2>🧠 Practice Problems</h2>
 
-<p>Test your knowledge with these exercises before checking the answers below!</p>
+<h1>What is an Expression?</h1>
+<div class="lesson-content">
 
-<h3>Easy 🟢</h3>
-<ul>
-    <li><code>7 + 5 = ?</code></li>
-    <li><code>15 − 8 = ?</code></li>
-    <li><code>9 + 6 = ?</code></li>
-    <li><code>20 − 13 = ?</code></li>
-</ul>
+<section id="part-6" class="lesson-part">
 
-<h3>Medium 🟡</h3>
-<ul>
-    <li><code>27 + 38 = ?</code></li>
-    <li><code>64 − 29 = ?</code></li>
-    <li><code>-3 + 7 = ?</code></li>
-    <li><code>5 − 9 = ?</code></li>
-</ul>
+  <article class="topic-block">
+    <h3>Exercise A: Basic Distribution</h3>
+    <p>Expand each expression using the distributive property:</p>
+    <ol>
+      <li><code>3(x + 5)</code></li>
+      <li><code>7(2y - 4)</code></li>
+      <li><code>x(x + 8)</code></li>
+    </ol>
+  </article>
 
-<h3>Absolute Value 🟣</h3>
-<ul>
-    <li><code>|-7| = ?</code></li>
-    <li><code>|12| = ?</code></li>
-</ul>
+  <article class="topic-block">
+    <h3>Exercise B: Distributing Negative Numbers</h3>
+    <p>Carefully distribute the negative factor and simplify:</p>
+    <ol>
+      <li><code>-4(a + 6)</code></li>
+      <li><code>-5(3b - 2)</code></li>
+      <li><code>-2m(4m - 3)</code></li>
+    </ol>
+  </article>
 
-<hr style="border: 0; height: 1px; background: #ccc; margin: 30px 0;">
+  <article class="topic-block">
+    <h3>Exercise C: Distribution & Combining Like Terms</h3>
+    <p>Distribute first, then combine like terms to fully simplify:</p>
+    <ol>
+      <li><code>4(2x + 3) + 5x</code></li>
+      <li><code>6(y - 2) - 3y</code></li>
+      <li><code>-3(2a + 4) + 2(a - 1)</code></li>
+      <li><code>15 - 2(3x + 4)</code></li>
+    </ol>
+  </article>
 
-<!-- Секция ответов с плавной анимацией -->
-<div class="answers-wrapper">
-    <button type="button" class="answers-toggle" onclick="toggleAnswers(this)">
-        <span class="arrow">▶</span> 🔍 Click here to reveal the Answers
-    </button>
-    <div class="answers-content">
-        <div class="answers-inner">
-            <h4>Easy 🟢</h4>
-            <ul>
-                <li><code>7 + 5 = <strong>12</strong></code></li>
-                <li><code>15 − 8 = <strong>7</strong></code></li>
-                <li><code>9 + 6 = <strong>15</strong></code></li>
-                <li><code>20 − 13 = <strong>7</strong></code></li>
-            </ul>
+  <article class="topic-block answer-key">
+    <h3>Answer Key</h3>
 
-            <h4>Medium 🟡</h4>
-            <ul>
-                <li><code>27 + 38 = <strong>65</strong></code></li>
-                <li><code>64 − 29 = <strong>35</strong></code></li>
-                <li><code>-3 + 7 = <strong>4</strong></code> <em>(Start at -3, move 7 units right on the number line)</em></li>
-                <li><code>5 − 9 = <strong>-4</strong></code> <em>(Start at 5, move 9 units left past zero)</em></li>
-            </ul>
+    <details>
+      <summary class="answer">🔍 Click here to reveal the Answers</summary>
 
-            <h4>Absolute Value 🟣</h4>
-            <ul>
-                <li><code>|-7| = <strong>7</strong></code> <em>(-7 is 7 units away from zero)</em></li>
-                <li><code>|12| = <strong>12</strong></code> <em>(12 is 12 units away from zero)</em></li>
-            </ul>
-        </div>
-    </div>
-</div>
+      <div class="answers-wrapper">
+        <h4>Exercise A:</h4>
+        <ol>
+          <li><code>3(x) + 3(5) =</code> <strong>3x + 15</strong></li>
+          <li><code>7(2y) - 7(4) =</code> <strong>14y - 28</strong></li>
+          <li><code>x(x) + x(8) =</code> <strong>x² + 8x</strong></li>
+        </ol>
 
-<style>
-    .answers-toggle {
-        background: none;
-        border: none;
-        font-size: 18px;
-        font-weight: bold;
-        color: #2b6cb0;
-        cursor: pointer;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: color 0.2s ease;
-    }
+        <h4>Exercise B:</h4>
+        <ol>
+          <li><code>-4(a) + (-4)(6) =</code> <strong>-4a - 24</strong></li>
+          <li><code>-5(3b) - (-5)(2) =</code> <strong>-15b + 10</strong></li>
+          <li><code>-2m(4m) - (-2m)(3) =</code> <strong>-8m² + 6m</strong></li>
+        </ol>
 
-    .answers-toggle:hover {
-        color: #1a4971;
-    }
+        <h4>Exercise C:</h4>
+        <ol>
+          <li><code>(8x + 12) + 5x =</code> <strong>13x + 12</strong></li>
+          <li><code>(6y - 12) - 3y =</code> <strong>3y - 12</strong></li>
+          <li><code>(-6a - 12) + (2a - 2) =</code> <strong>-4a - 14</strong></li>
+          <li><code>15 - 6x - 8 =</code> <strong>-6x + 7</strong></li>
+        </ol>
+      </div>
+    </details>
+  </article>
 
-    .answers-toggle .arrow {
-        display: inline-block;
-        font-size: 12px;
-        transition: transform 0.4s ease;
-    }
-
-    .answers-toggle.active .arrow {
-        transform: rotate(90deg);
-    }
-
-    .answers-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.6s cubic-bezier(0, 1, 0, 1);
-    }
-
-    .answers-content.show {
-        max-height: 1000px;
-        transition: max-height 0.7s ease-in-out;
-    }
-
-    .answers-inner {
-        margin-top: 15px;
-        padding: 15px 20px;
-        background-color: #f7fafc;
-        border-radius: 8px;
-        border: 1px solid #e2e8f0;
-    }
-</style>
-
-<script>
-    function toggleAnswers(button) {
-        button.classList.toggle('active');
-        const content = button.nextElementSibling;
-        content.classList.toggle('show');
-    }
-</script>
+</section>
 </div>
 
 <script>
