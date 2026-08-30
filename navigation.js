@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "lesson7/part4.html", "lesson7/part5.html", "lesson7/part6.html"
   ];
 
-  // Создаем контейнер кнопок, если его нет
+  // 1. Проверяем, есть ли кнопки на странице. Если нет — создаём их автоматически!
   let navContainer = document.querySelector('.lesson-navigation');
   if (!navContainer) {
     navContainer = document.createElement('div');
@@ -43,11 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(navContainer);
   }
 
-  const currentPath = window.location.pathname;
-  const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
-
+  // 2. Получаем созданные/найденные кнопки
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
+
+  // Если кнопок всё ещё нет, прекращаем выполнение, чтобы избежать ошибок
+  if (!prevBtn || !nextBtn) return;
+
+  const currentPath = window.location.pathname;
+  const currentIndex = courseMap.findIndex(path => currentPath.endsWith(path));
 
   if (currentIndex !== -1) {
     if (currentIndex > 0) {
