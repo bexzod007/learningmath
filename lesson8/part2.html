@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Math Room</title>
+</head>
+<body>
+    <div class="scroll-progress"></div>
+  <header class="header">
+    <img src="/learningmath/logo.png" alt="mathroom logo" class="logo"/>
+    <nav class="nav">
+      <a href="../about.html" class="nav-link">About me</a>
+      <a href="../index.html" class="nav-link">Main</a>
+    </nav>
+        <button id="theme-toggle"></button>
+  </header>
+
+<h1>What is the Distributive Property?</h1>
+<div class="lesson-content">
+
+<div>
+        <h1>Lesson 2: Solving Addition Equations</h1>
+        <p>To solve an addition equation, use the <strong>inverse (opposite) operation</strong>. The opposite of addition is <strong>subtraction</strong>.</p>
+        
+        <p><strong>Rule:</strong> Whatever you do to one side, you MUST do to the other side to keep it balanced.</p>
+
+        <h3>Example Problem: Solve <code>x + 5 = 12</code></h3>
+
+        <div>
+            <strong>Step 1: Find the variable.</strong><br>
+            The variable is <code>x</code>. It has <code>+ 5</code> next to it.
+        </div>
+
+        <div>
+            <strong>Step 2: Subtract 5 from both sides.</strong><br>
+            <code>x + 5 - 5 = 12 - 5</code>
+        </div>
+
+        <div>
+            <strong>Step 3: Simplify.</strong><br>
+            <code>x = 7</code>
+        </div>
+
+        <p><strong>Result:</strong> The value of <code>x</code> is <strong>7</strong>.</p>
+    </div>
+</div>
+
+<script>
+const toggleBtn = document.getElementById('theme-toggle');
+
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+  toggleBtn.textContent = '☀️'; 
+} else {
+  toggleBtn.textContent = '🌙'; 
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'light'); 
+  }
+});
+
+
+</script>
+<script src="../navigation.js"></script>
+</body>
+
+
+
+
+</html>
