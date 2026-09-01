@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Lesson 6
     "lesson6/part1.html", "lesson6/part2.html", "lesson6/part3.html", "lesson6/part4.html", "lesson6/part5.html", "lesson6/part6.html",
     // Lesson 7
-    "lesson7/part1.html", "lesson7/part2.html", "lesson7/part3.html", "lesson7/part4.html", "lesson7/part5.html", "lesson7/part6.html"
+    "lesson7/part1.html", "lesson7/part2.html", "lesson7/part3.html", "lesson7/part4.html", "lesson7/part5.html", "lesson7/part6.html",
     // lesson 8
     "lesson8/part1.html", "lesson8/part2.html", "lesson8/part3.html", "lesson8/part4.html", "lesson8/part5.html", "lesson8/part6.html", "lesson8/part7.html"
   ];
